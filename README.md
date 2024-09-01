@@ -1,3 +1,6 @@
+# Client-Server-API - Cotação do dólar
+
+## Requisitos
 1. Entrega de 2 sistemas:
     - client.go
     - server.go
@@ -19,3 +22,18 @@ Utilizando o package "context", o client.go terá um timeout máximo de 300ms pa
 7. O client.go terá que salvar a cotação atual em um arquivo "cotacao.txt" no formato: Dólar: {valor}
 
 8. O endpoint necessário gerado pelo server.go para este desafio será: /cotacao e a porta a ser utilizada pelo servidor HTTP será a 8080.
+
+## Como rodar
+- Certifique de ter Go instalado na máquina
+- Clone o repositório: git clone https://github.com/GustavooBueno/desafio-client-server-api.git
+- cd desafio-client-server-api
+- Rodar servidor:
+    - cd Server
+    - go run server.go
+- Rodar cliente:
+    - cd Client
+    - go run client.go
+- No diretório Client será criado um arquivo cotacao.txt
+- Para verificar o Banco de Dados:
+    - sqlite3 Server/cotacoes.db
+    - SELECT * FROM cotacoes;
