@@ -61,7 +61,7 @@ func obterCotacao(ctx context.Context) (*Cotacao, error) {
 	}
 	defer resp.Body.Close()
 
-	var result map[string]map[string]Cotacao
+	var result map[string]Cotacao
 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
 		return nil, err
 	}

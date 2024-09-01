@@ -31,7 +31,11 @@ func main() {
 		log.Fatal("Erro ao decodificar resposta:", err)
 	}
 
-	bid := result["bid"]
+	bid, ok := result["bid"]
+	if !ok {
+		log.Fatal("Erro: campo 'bid' não encontrado na resposta")
+	}
+
 	fmt.Printf("Cotação atual do dólar: %s\n", bid)
 
 	// Salvar cotação em arquivo
